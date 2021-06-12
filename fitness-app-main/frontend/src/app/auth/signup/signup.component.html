@@ -1,0 +1,53 @@
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Register</mat-card-title>
+        </mat-card-header>
+        <form (submit)="onSignup(signupForm)" class="example-form" #signupForm="ngForm">
+            <mat-card-content>
+                <mat-form-field>
+                    <input matInput name="email" type="email" placeholder="email" ngModel #emailInput="ngModel" required
+                        email>
+                    <mat-error *ngIf="emailInput.invalid">Please enter your email</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput name="username" type="username" placeholder="username" ngModel
+                        #usernameInput="ngModel" required>
+                    <mat-error *ngIf="usernameInput.invalid">Please enter your username</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>gender</mat-label>
+                    <mat-select name="gender" ngModel #genderSelector="ngModel" required>
+                        <mat-option value="male">male</mat-option>
+                        <mat-option value="female">female</mat-option>
+                        <mat-option value="non-binary gender">non-binary gender</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="same_line">
+                    <mat-form-field class="half">
+                        <input matInput name="height" type="number" placeholder="height(cm)" ngModel
+                            #heightInput="ngModel">
+                    </mat-form-field>
+                    <mat-form-field class="half_right">
+                        <input matInput name="weight" type="number" placeholder="weight(kg)" ngModel
+                            #weightInput="ngModel">
+                        <!-- <mat-error *ngIf="passwordInput.invalid">Please enter your password</mat-error> -->
+                    </mat-form-field>
+                </div>
+                <mat-form-field>
+                    <input matInput name="password" type="password" placeholder="password" ngModel
+                        #passwordInput="ngModel" required pattern="^(?=.*\d)(?=.*[a-zA-Z]).{6,}$">
+                    <mat-error *ngIf="passwordInput.invalid"> Password must be at least 6 characters, and must include at least one letter and one numeric digit.</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput name="confirmPass" type="password" placeholder="confirm password" ngModel #confirmPassInput="ngModel" required>
+                    <mat-error *ngIf="confirmPassInput.value !== passwordInput.value">Two password do not match</mat-error>
+                </mat-form-field>
+            </mat-card-content>
+            <button mat-raised-button color="warn" type="submit">Register</button>
+            <br><br>
+            <p class="home-screen__login">Have an account? <a routerLink="/signin" class="home-screen__login-link">Log In</a></p>
+        </form>
+    </mat-card>
+</div>

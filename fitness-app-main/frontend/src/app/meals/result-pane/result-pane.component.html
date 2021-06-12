@@ -1,0 +1,43 @@
+<h2>
+	The List of Meals
+</h2>
+
+<div class="form-group">
+
+          <form>
+            <select class="form-control" (change)="onChange($event.target.value)">
+							<option value="all" selected="selected">All Calories</option>
+							<option value="high">High Calories</option>
+							<option value="low">Low Calories</option>
+            </select>
+          </form>
+</div>
+
+	<div >
+
+		<table >
+			<tr>
+				<th>FOOD</th>
+				<th>DESCRIPTION</th>
+				<th>CALORIES</th>
+				<th>ACTION</th>
+			</tr>
+			<tr *ngFor="let foodList of childFoodlist | filter:caloriesToShow">
+				<td><div><span> {{foodList.name}}</span></div> 	</td>
+				<td><div><span> {{foodList.description}}</span> </div></td>
+				<td><div><span> {{foodList.calories}} </span></div> </td>
+				<td><div><button class=" btn btn-primary"(click)="editFoodButton(foodList)">Edit</button>
+						<button class="btn btn-danger" (click)="deleteFoodButton(foodList)" >Delete</button></div>
+			</td>
+			</tr>
+
+			<tr>
+
+			</tr>
+
+		</table>
+		<ul>
+			<li>
+			</li>
+		</ul>
+	</div>

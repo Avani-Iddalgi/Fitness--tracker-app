@@ -1,0 +1,55 @@
+<div class="profile_width">
+    <mat-card class="box">
+        <form #updateForm="ngForm" (submit)="updateProfile(updateForm)">
+            <h2>Fitness Information</h2>
+            <mat-horizontal-stepper>
+                <mat-step label="Height(cm)">
+            <mat-form-field>
+                <input matInput name="height" value="{{user.height ? user.height : 0}}" ngModel #heightInput="ngModel" (ngModelChange)="heightChange()">
+            </mat-form-field>
+        </mat-step>
+        <mat-step label="Weight">
+            <mat-form-field>
+                <input matInput name="weight" value="{{user.weight ? user.weight : 0}}" ngModel #weightInput="ngModel" (ngModelChange)="weightChange()">
+            </mat-form-field>
+        </mat-step>
+        <mat-step label="Gender">
+            <mat-form-field>
+                <mat-select title="gender" value="{{user.gender}}"  name="gender" ngModel #genderSelector="ngModel" (ngModelChange)="genderChange()">
+                    <mat-option value="male">male</mat-option>
+                    <mat-option value="female">female</mat-option>
+                    <mat-option value="no-binary gender">no-binary gender</mat-option>
+                </mat-select>
+            </mat-form-field>
+            </mat-step>
+        </mat-horizontal-stepper>
+            <mat-divider [inset]="true"></mat-divider>
+            <br>
+            <h2>Identity Information</h2>
+            <mat-form-field>
+                <mat-label>username</mat-label>
+                <input disabled=true matInput name="username" type="text" value="{{user.username}}" ngModel #usernameInput="ngModel" (ngModelChange)="usernameChange()">
+              </mat-form-field>  
+            <mat-form-field>
+                <mat-label>email</mat-label>
+                <input disabled=true matInput name="email" type="email" value="{{user.email}}" ngModel #emailInput="ngModel" (ngModelChange)="emailChange()">
+              </mat-form-field> 
+              <br *ngIf="!isChangePassword">
+              <br *ngIf="!isChangePassword">
+              <a *ngIf="!isChangePassword" href="javascript:void(0);" (click)="changePassword()">Change password?</a>
+              <br *ngIf="!isChangePassword"><br *ngIf="!isChangePassword">
+              <mat-form-field *ngIf="isChangePassword">
+                  <mat-label>New password</mat-label>
+                  <input matInput name="newPassword" type="password" ngModel #newPasswordInput="ngModel" required pattern="^(?=.*\d)(?=.*[a-zA-Z]).{6,}$">
+                  <mat-error *ngIf="newPasswordInput.invalid"> Password must be at least 6 characters, and must include at least one letter and one numeric digit.</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                  <mat-label>To save change. please enter your current password</mat-label>
+                  <input matInput name="currentPassword" type="password" ngModel #currentPassInput="ngModel">
+              </mat-form-field>
+              <br><br><br>
+              <button mat-raised-button color="basic" type="submit">Save Change</button>&nbsp;&nbsp;
+              <button mat-raised-button color="warn" [routerLink]="['/home']">Cancel</button>
+        </form>
+      </mat-card>
+</div>

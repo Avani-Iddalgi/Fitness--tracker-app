@@ -1,0 +1,44 @@
+  
+ul  {
+	text-decoration: none;
+	list-style: none;
+}
+span {
+	color: green;
+}
+button {
+	margin: 5px;
+}
+th {
+	padding-right: 40px;
+}
+table {
+	text-align: justify;
+	text-align-last: left;
+	table-layout: fixed;
+}
+
+select {
+
+		text-align: center;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    margin-bottom: 70px;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+		width: 30%;
+    white-space: nowrap;
+}
+
+h2{
+  color: orange;
+}
+
+form{
+  margin-left:90px;
+}

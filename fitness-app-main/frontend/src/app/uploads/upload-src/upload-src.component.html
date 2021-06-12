@@ -1,0 +1,45 @@
+<mat-card class="box">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <mat-card-header>
+    <mat-card-title>Upload Video</mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="form" (submit)="onSaveUpload()" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput type="text" formControlName="title" placeholder="Upload Title">
+      <mat-error *ngIf="form.get('title').invalid">Please enter a upload title.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select matInput formControlName="contentType" placeholder="Type" [(value)]="contentType">
+        <!-- <mat-option value="image" aria-selected="true">Image</mat-option> -->
+        <mat-option value="video" aria-selected="true">Video</mat-option>
+        <mat-option value="link" aria-selected="true">Link</mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('title').invalid">Please enter a content type.</mat-error>
+    </mat-form-field>
+    <!-- <div *ngIf="contentType == 'image'">
+            <button mat-stroked-button type = "button" (click) = "filePicker.click()">Pick Media</button>
+            <input type="file" #filePicker (change) = "onImagePicked($event)" accept=".png, .jpg, .jpeg, .gif" >
+          <mat-error *ngIf="form.get('media').invalid">Please select media.</mat-error>
+        </div> -->
+    <div *ngIf="contentType == 'link'">
+      <mat-form-field>
+        <input matInput type="url" formControlName="link" placeholder="Link Url">
+        <mat-error *ngIf="form.get('link').invalid">Please enter a URL.</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="image-preview"
+      *ngIf="imagePreview !== '' && imagePreview && form.get('media').valid && contentType == 'image'">
+      <img [src]="imagePreview" [alt]="form.value.title">
+    </div>
+    <div *ngIf="contentType == 'video'">
+      <button mat-stroked-button type="button" (click)="filePicker.click()">Pick Media</button>
+      <input type="file" #filePicker (change)="onImagePicked($event)" accept=".mp4, .3gp, .flv">
+      <mat-error *ngIf="form.get('media').invalid">Please select media.</mat-error>
+    </div>
+    <mat-form-field>
+      <textarea matInput rows="6" formControlName="content" placeholder="Upload Content"></textarea>
+      <mat-error *ngIf="form.get('content').invalid">Please enter a upload Description</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Save Upload</button>
+  </form>
+</mat-card>

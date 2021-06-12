@@ -1,0 +1,38 @@
+    <div class="container">
+        <h1>Edit Meal Record</h1>
+        <div class="row">
+            <div class="col">
+                <img src="../../assets/img/LandingPage/02.jpg" class="leftPic">
+            </div>
+            <div class="col colBorder">
+        <div class="form-group">
+            <br>
+            <!-- <label for="Food">Enter food Name?</label> -->
+            <label for="Food">Food</label>
+            <input type="text" class="form-control " id="Food" [(ngModel)]="data.Food" placeholder="Enter food Name">
+            
+        </div>
+        <div class="form-group">
+            <!-- <label for="Description">Enter description?</label> -->
+            <label for="Description">Description</label>
+            <input type="text" class="form-control leeft" id="Description" [(ngModel)]="data.Description" placeholder="Enter description">
+        </div>
+        <div class="form-group">
+             <!-- <label for="Calories">Enter Calories</label> -->
+            <label for="Calories">Calories</label>
+            <input type="text" class="form-control" id="Calories" [(ngModel)]="data.Calories" placeholder="Enter Calories">
+        </div>
+        <div class="form-group">
+            <!-- <label for="Quantity">Enter Quantity</label> -->
+            <label for="Quantity">Quantity</label>
+            <input type="number" class="form-control" id="Quantity" [(ngModel)]="data.Quantity" placeholder="Enter Quantity">
+        </div>
+        <div class ="center">
+             <!-- <button for="Update"</button> -->
+        <button type="submit" class="btn btn-primary btn-xl rounded-pill" (click)="update()">Update</button>
+         <!-- <button for="Cancel"</button> -->
+        <button type="submit" class="btn btn-danger btn-xl rounded-pill" [routerLink]="[ '/list']">Cancel</button>
+    </div>
+    </div>
+   
+ 

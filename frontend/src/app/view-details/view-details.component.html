@@ -1,0 +1,24 @@
+<app-header></app-header>
+<p>view-details works!</p>
+<div>
+<div>
+    <label>Food Name:</label>
+    <input type="text"  [(ngModel)] ="food" required>
+</div>
+<div>
+    <label>Quantity:</label>
+    <input type="number" required>
+</div>
+
+<button class="btn btn-primary" (click) = "search()">Details</button>
+
+<div *ngIf = "response">
+<p>Item Name : {{response.item_name}}</p>
+<p>Calories: {{response.nf_calories}}</p>
+<p>Total Fat: {{response.nf_total_fat}}</p>
+<p>Total Carbohydtrate: {{response.nf_total_carbohydrate}}</p>
+<p>Total Fat: {{response.nf_total_fat}}</p>
+<p>Total Fat: {{response.nf_protein}}</p>
+</div>
+
+</div>

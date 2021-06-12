@@ -1,0 +1,25 @@
+<div class="container">
+ 
+    <h3>Details for Meal Record</h3>
+    <div class="form-group">
+     <!-- <label for="Food">Enter food Name</label> -->
+        <label for="Food">Food</label>
+        <input type="text" class="form-control" id="Food" [(ngModel)]="data.Food" placeholder="Enter food Name" disabled=true>
+    </div>
+    <div class="form-group">
+        <!-- <label for="Description">Enter Description</label> -->
+        <label for="Description">Description</label>
+        <input type="text" class="form-control" id="Description" [(ngModel)]="data.Description" placeholder="Enter description" disabled=true>
+    </div>
+    <div class="form-group">
+        <!-- <label for="Calories">Enter Calories</label> -->
+        <label for="Calories">Calories</label>
+        <input type="text" class="form-control" id="Calories" [(ngModel)]="data.Calories" placeholder="Enter Calories" disabled=true>
+    </div>
+    <div class="form-group">
+        <!-- <label for="Quantity">Enter Quantity</label> -->
+        <label for="Quantity">Quantity</label>
+        <input type="number" class="form-control" id="Quantity" [(ngModel)]="data.Quantity" placeholder="Enter Quantity" disabled=true>
+    </div>
+        <button type="submit" class="btn btn-warning ml-1" [routerLink]="[ '/list']"> Back to List</button>
+</div>

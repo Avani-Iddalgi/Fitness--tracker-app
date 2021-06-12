@@ -1,0 +1,10 @@
+
+<div class="container" id="container">
+    <div [hidden]="isShow" id="snake">
+      <div class="snake snake_head" id="snake_head"></div>
+      <div class="snake" ></div>
+      <div class="snake" ></div>
+    </div>
+    <div [hidden]="isShow" class="food" id="food" background-color: white></div>
+  <div [hidden]="start" class="start" id="start" (click)="startGame()" >Begin Game</div>
+</div>

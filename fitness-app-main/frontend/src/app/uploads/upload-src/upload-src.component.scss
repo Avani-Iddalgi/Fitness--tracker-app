@@ -1,0 +1,52 @@
+// mat-card{
+//    width: 80%;
+//    margin: auto;
+// }
+
+mat-card{
+    padding-top: 2em;
+}
+mat-form-field,
+textarea{
+    width: 100%;
+}
+
+mat-spinner {
+    margin: auto;
+  }
+
+input[ type= "file" ] {
+    visibility: hidden;
+}
+
+.image-preview{
+    height: 5rem;
+    margin: 1rem 0;
+}
+
+.image-preview img {
+    height: 100%;
+}
+
+.video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .box
+  {
+      position: absolute;
+      top:20%;
+      opacity:1;
+      padding:80px 50px 40px 50px;
+      width:100%;
+      background:#fff;
+      border-radius:10px;
+      transform:scale(1);
+      -webkit-transform:scale(1);
+      -ms-transform:scale(1);
+      z-index:5;max-width:330px;
+  }

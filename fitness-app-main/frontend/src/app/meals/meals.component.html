@@ -1,0 +1,43 @@
+<app-header></app-header>
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+    <div class= "title">
+      <section id ="header">
+        <h1>
+           {{title}}
+        </h1>
+      </section>
+      <div class="row">
+  
+          <div class="col-lg-5 col-md-5 ">
+         <app-add-food
+          (addNewFood)="showFood($event)"
+         ></app-add-food>
+          </div>
+            <!-- form to input meal details -->
+  
+  
+          <div class=" well col-lg-7 col-md-7">
+  
+            <app-result-pane
+              [childFoodlist]="masterFoodsList"
+              (clickSender)= "showFoodDetailToEdit($event)"
+              (clickRemove)= "deleteFoodButton($event)"
+            ></app-result-pane>
+  
+            <app-edit-food
+            [foodToEdit]="selectedFood"
+            (doneClickedSender)="finishedEditing()"
+            ></app-edit-food>
+  
+          </div>
+            <!-- result panel -->
+      </div>
+      <!-- row holding result pane and form ends here -->
+  
+    </div>
+    <button type="submit" class="btn btn-warning ml-1" [routerLink]="[ '/home']"> Back to Home Page</button>
+  </div>
+  
+  <app-footer></app-footer>
+  <!-- footer -->

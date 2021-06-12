@@ -1,0 +1,29 @@
+<form class="" >
+
+	<div class="form-group row">
+		<label >Food</label><br>
+		<div >
+			<input placeholder="Enter the meal you just had" #addFoodName><br>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label>Description</label><br>
+		<div >
+			<input placeholder="say somthing about the food" #newDescription><br>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label>Calories</label><br>
+		<div>
+			<input placeholder="e.g 200" #newCalorie>
+		</div>
+	</div>
+		<button class="btn btn-primary" (click)="addFood( addFoodName.value, newDescription.value, newCalorie.value);
+		 addFoodName.value='';
+		 newDescription.value='';
+		 newCalorie.value='';
+		">ADD
+		</button>
+</form>

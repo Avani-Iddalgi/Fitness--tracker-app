@@ -1,0 +1,40 @@
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="../../assets/img/LandingPage/02.jpg" class="leftPic">
+            </div>
+            <div class="col colBorder">
+        <div class="form-group">
+            <br>
+            <h1>Add a meal</h1>
+            <hr>
+            <!-- <label for="Food">What would you like to name your dish?</label> -->
+            <input type="text" class="form-control" id="Food" [(ngModel)]="data.Food" placeholder="What would you like to name your dish?" required=true>
+        </div>
+        <div class="form-group">
+            <!-- <label for="Description">Description</label> -->
+            <input type="text" class="form-control" id="Description" [(ngModel)]="data.Description" placeholder="Enter description" required=true>
+        </div>
+        <div class="form-group">
+            <!-- <label for="Calories">Calories</label> -->
+            <input type="text" class="form-control" id="Calories" [(ngModel)]="data.Calories" placeholder="Enter Calories"required=true>
+        </div>
+        <div class="form-group">
+            <!-- <label for="Quantity">Quantity</label> -->
+            <input type="number" class="form-control" id="Quantity" [(ngModel)]="data.Quantity" placeholder="Enter Quantity" required=true>
+        </div>
+        <div class ="center">
+            <!-- <button to add Add and View added meals</label> -->
+        <button type="submit" class="btn btn-danger btn-xl rounded-pill" (click)="submitForm()">Add</button>
+        &nbsp;
+        <button type="button" class="btn btn-primary btn-xl rounded-pill" [routerLink]="[ '/list']">List</button>
+        <div class="row" *ngIf="showMsg">
+            <div class="col-xs-6">
+                <p class="alert alert-success">Meal added successfully!</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+ 

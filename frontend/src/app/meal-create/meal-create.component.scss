@@ -1,0 +1,40 @@
+input
+{
+    align-content: center;
+    width: 18em;
+}
+.container
+{
+    padding-top: 5%;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+input{width:100%;
+text-align: center;
+}
+label
+{
+    padding-left: 35%;
+}
+.colBorder
+{
+    border: groove;
+}
+h3
+{
+    text-align: center;
+}
+.leftPic
+{
+    width: 100%;
+    height: 100%;   
+}
+.center
+{
+    padding-left: 40%; 
+}
+
+.alert alert-success{
+    font-weight: bold;
+    color: green;
+}

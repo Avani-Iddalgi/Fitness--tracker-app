@@ -1,0 +1,62 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card class="box">
+  <mat-card-header>
+    <mat-card-title>Video Library for User</mat-card-title>
+
+</mat-card-header>
+<!-- <mat-accordion multi="true" *ngIf = "uploads.length > 0 && !isLoading">  
+  <mat-expansion-panel *ngFor="let upload of uploads">
+        <mat-expansion-panel-header class="matheaderCenter">
+            Video Title : {{upload.title}}
+        </mat-expansion-panel-header>
+          <div class="upload-image" *ngIf="upload.contentType == 'image'">
+            <img [src]="upload.mediaPath" [alt]="upload.title">
+          </div>
+          <div class="upload-image"  *ngIf="upload.contentType == 'video'">
+            <video controls="controls" [src]="upload.mediaPath" width="560" height="315"></video>
+          </div>
+          <div class="upload-image"  *ngIf="upload.contentType == 'link'">
+            <iframe width="560" height="315" [src]="upload.mediaPath" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <a [href]="upload.mediaPath">Link to : {{upload.title}}</a>
+          </div>
+        <p>{{ upload.content }}</p>
+        <mat-action-row>
+            <a mat-button color= "primary" [routerLink]="['/edit', upload.id]">Edit</a>
+            <button mat-button color= "warn" (click)="onDelete(upload.id)">Delete </button>
+        </mat-action-row>
+       
+      </mat-expansion-panel>
+</mat-accordion> -->
+
+  <mat-accordion multi="true" *ngIf="uploads.length > 0 && !isLoading">
+    <mat-expansion-panel *ngFor="let upload of uploads">
+      <!-- *ngIf="upload.id == user.userId -->
+
+      <mat-expansion-panel-header class="matheaderCenter">
+        Video Title : {{upload.title}}
+      </mat-expansion-panel-header>
+      <div class="upload-image" *ngIf="upload.contentType == 'image'">
+        <img [src]="upload.mediaPath" [alt]="upload.title">
+      </div>
+      <div class="upload-image" *ngIf="upload.contentType == 'video'">
+        <video controls="controls" [src]="upload.mediaPath" width="560" height="315"></video>
+      </div>
+      <div class="upload-image" *ngIf="upload.contentType == 'link'">
+        <iframe width="560" height="315" [src]="upload.mediaPath" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+     <p>{{ upload.content }}</p>
+
+      <mat-action-row>
+        <a mat-button color="primary" [routerLink]="['/edit', upload.id]">Edit</a>
+        <button mat-button color="warn" (click)="onDelete(upload.id)">Delete </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+
+  </mat-accordion>
+
+  <p class="info-text mat-body-1" *ngIf="uploads.length <= 0 && !isLoading">No upload yet</p> 
+</mat-card>
+
+

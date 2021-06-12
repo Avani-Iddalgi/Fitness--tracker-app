@@ -1,0 +1,26 @@
+.profile_width {
+    width: 60%;
+}
+
+mat-card{
+    text-align: center;
+}
+
+mat-form-field {
+    width: 80%;
+}
+.box
+{
+    position: absolute;
+    top:20%;
+    left:20%;
+    opacity:1;
+    padding:20px 50px 40px 50px;
+    width:100%;
+    background:#fff;
+    border-radius:10px;
+    transform:scale(1);
+    -webkit-transform:scale(1);
+    -ms-transform:scale(1);
+    z-index:5;max-width:700px;
+}

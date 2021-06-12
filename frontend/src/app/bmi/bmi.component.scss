@@ -1,0 +1,63 @@
+  /* use of variables*/
+  $color: #ff4081;
+  
+  .height, .weight {
+    flex: auto;
+    font-weight: bolder;
+    font-size: larger;
+  }
+    
+  h2{
+    text-align: center;
+    color:rgb(228, 29, 29);
+    font-weight: bolder;
+    font-size: xx-large;
+  }
+
+  p{
+    color:rgb(228, 29, 29);
+    font-size:medium
+  }
+
+  .height label{
+    color: $color;
+  }
+
+  .weight label{
+    color: $color;
+  }
+  ul li{
+    color: rgb(228, 29, 29);
+    list-style-type:none;
+  }
+ 
+  input
+{
+    align-content: center;
+    width: 18em;
+}
+.container
+{
+    padding-top: 2%;
+}
+label
+{
+    padding-left: 35%;
+}
+.colBorder
+{
+    border: groove;
+}
+h3
+{
+    text-align: center;
+}
+.center
+{
+  text-align: center; 
+}
+
+img
+{
+  padding-top: 10%;
+}

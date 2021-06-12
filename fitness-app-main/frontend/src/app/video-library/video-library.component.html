@@ -1,0 +1,35 @@
+<link href="https://vjs.zencdn.net/7.7.5/video-js.css" rel="stylesheet" />
+
+<div class="main-panel show-grid row">
+
+
+  <div class="display-panel col-md-4 col-xs-6 video" *ngFor="let upload of uploads">
+    <mat-card size="small">
+      <!-- <img style= "float: right; width: 20px; height: 20px;" mat-card-image src="http://icons.iconarchive.com/icons/designbolts/free-valentine-heart/256/Heart-icon.png" alt="favorite"> -->
+      <!-- <mat-expansion-panel >
+    <mat-expansion-panel-header> -->
+      <!-- {{upload.title}} -->
+      <mat-card-header>
+        <mat-card-title>{{upload.title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <!-- </mat-expansion-panel-header> -->
+        <div class="upload-image" *ngIf="upload.contentType == 'image'">
+          <img [src]="upload.mediaPath" [alt]="upload.title">
+        </div>
+        <div class="videoitem" *ngIf="upload.contentType == 'video'">
+          <video controls="controls" [src]="upload.mediaPath" width="360" height="280"></video>
+        </div>
+        <div class="videoitem" *ngIf="upload.contentType == 'link'">
+          <iframe width="360" height="280" [src]="upload.mediaPath" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </mat-card-content>
+      <div class="hover-menu down">{{upload.content}}
+        <a class="button detail" (click)="handleclick(upload.id)">Detail</a>
+      </div>
+      <!-- <mat-card-content>{{ upload.content }}</mat-card-content> -->
+      <!-- </mat-expansion-panel>  -->
+    </mat-card>
+  </div>
+</div>

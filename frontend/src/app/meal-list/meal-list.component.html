@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>My Meals</h1>
+    <table class="table" id="contentToConvert">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Food </th>
+          <th scope="col">Description</th>
+          <th scope="col">Calories</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of MealsData">
+          <td></td>
+          <td>{{item.Food}}</td>
+          <td>{{item.Description}}</td>
+          <td>{{item.Calories}}</td>
+          <td>{{item.Quantity}}</td>
+          <td style="display: flex">
+              <button type="button" class="btn btn-warning btn-sm" [routerLink]="[ '/editMeal',item.id]">Edit</button>
+              <button type="button" class="btn btn-danger btn-sm ml-1" (click)="delete(item)">Delete</button>
+              <button type="button" class="btn btn-warning btn-sm ml-1" (click)="captureScreen()">Download PDF</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

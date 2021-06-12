@@ -1,0 +1,43 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+.container{
+    height:760px;
+    width:1500px;
+    margin:5px auto;
+    border:5px solid rgb(231, 16, 16);
+    background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/pf-s48-ted-0138-jj_2.jpg?w=1000&dpr=1&fit=default&crop=default&auto=format&fm=pjpg&q=75&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=420dddaa54815c679ad49a92c9c0d653");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    position: absolute;
+}
+.start{
+    height:60px;
+    width:120px;
+    margin:0px auto;
+    margin-top:450px;
+    text-align: center;
+    line-height: 60px;
+    border:1px transparent rgb(207, 29, 29);
+    border-radius: 80%;
+    background-color: blueviolet;
+    background-origin: border-box;
+    cursor: pointer;
+}
+
+.snake{
+    position: absolute;
+    height:30px;
+    width:30px;
+}
+.snake_head{
+    border-radius:50%;
+}
+.food{
+    position: absolute;
+    height:30px;
+    width:30px;
+}

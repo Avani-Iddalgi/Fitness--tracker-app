@@ -1,0 +1,47 @@
+.video-detail{
+    width:78%;
+
+}
+.video-detail-page{
+    width:100%;
+    display:inline-flex;
+}
+
+mat-card {
+    width: 50rem;
+    height: auto;
+}
+
+mat-card-content{
+    text-align: center;
+    font-size: 25px;
+    color: turquoise;
+}
+
+.videoitem{
+    //display: block;
+    size: large;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+// .container {
+//     margin-top: 40px;
+//     margin: 0 auto;
+//     width: 80rem;
+// }
+
+// .block1 {
+//     width: 60rem;
+// }
+
+// .block2 {
+//     margin-top: 3rem;
+//     margin-left: 5rem;
+    
+// }
+.block1, .block2{
+    display: inline-flex;
+}

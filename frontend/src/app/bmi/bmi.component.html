@@ -1,0 +1,53 @@
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="../../assets/img/LandingPage/BMI-Chart-1.png" class="leftPic">
+            </div>
+            <div class="col colBorder">
+
+	<h2>BMI Calculator</h2>
+
+	<p>Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women..</p>
+	<div class="playground">
+		<div class="inputs">
+			<div class="height">
+				<!-- <label> for Height:</label> -->
+				<label>Height:</label>
+				<p>
+					<!-- input type="range" to specify a numeric value for height  -->
+					<input type="range" #heightSlider min="50" max="250" [value]="heightValue$ | async">
+				</p>
+				<p>
+					<input type="number" #heightField [value]="heightValue$ | async">
+				</p>
+				<p>
+					{{heightValue$ | async}} cm
+				</p>
+			</div>
+			<div class="weight">
+				<!-- <label> for Weight:</label> -->
+				<label>Weight:</label>
+				<!-- input type="range" to specify a numeric value for weight  -->
+				<p>
+					<input type="range" #weightSlider min="10" max="300" [value]="weightValue$ | async">
+				</p>
+				<p>
+					<input type="number" #weightField [value]="weightValue$ | async">
+				</p>
+				<p>
+					{{weightValue$ | async}} kg
+				</p>
+			</div>
+		</div>
+		<div class="bmi">
+		<p>YOUR BMI: {{ bmi$ | async }}</p>
+		<p>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</p>
+		<p>BMI Categories:</p>
+		<ul>
+			<li>Underweight = <18.5</li>
+			<li>Overweight = 25–29.9</li>
+			<li>Obesity = BMI of 30 or greater</li>
+		</ul>
+		</div>
+		<button type="submit" class="btn btn-warning ml-1" [routerLink]="[ '/home']"> Back to Home Page</button>
+	</div>
